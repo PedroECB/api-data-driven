@@ -1,8 +1,29 @@
 {
   "version": 2,
-  "dgSpecHash": "AZ+0J86gS13hskDNUAwMtJgPbaIpo9nOPkIslSOswpkpqaV127m63dplT9z8HwDzmgR3paePMMWa2mbzhYgZcQ==",
+  "dgSpecHash": "JLb67PxfDUUPL280T3C8kdUZLXM05FZA7SBzh6iNV/VO1iNgSuqQv9ZOisWYltDxjKraYXkgs7GLoPnxpbov4g==",
   "success": true,
   "projectFilePath": "C:\\dev\\exemplos\\api-data-driven\\api-data-driven.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.31\\microsoft.entityframeworkcore.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.31\\microsoft.entityframeworkcore.abstractions.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.31\\microsoft.entityframeworkcore.analyzers.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\3.1.31\\microsoft.entityframeworkcore.inmemory.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.31\\microsoft.extensions.caching.abstractions.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.31\\microsoft.extensions.caching.memory.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.31\\microsoft.extensions.configuration.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.31\\microsoft.extensions.configuration.abstractions.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.31\\microsoft.extensions.configuration.binder.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.31\\microsoft.extensions.dependencyinjection.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.31\\microsoft.extensions.dependencyinjection.abstractions.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.logging\\3.1.31\\microsoft.extensions.logging.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.31\\microsoft.extensions.logging.abstractions.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.options\\3.1.31\\microsoft.extensions.options.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.31\\microsoft.extensions.primitives.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
   "logs": []
 }

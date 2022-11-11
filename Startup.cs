@@ -2,16 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiDataDriven.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace api_data_driven
+
+namespace ApiDataDriven
 {
     public class Startup
     {
@@ -26,6 +29,13 @@ namespace api_data_driven
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
+            services.AddScoped<DataContext, DataContext>();
+
+            // O tratamento de dependências pode ser feito de 3 maneiras no .NET
+            // AddTransient<T>() => Gera uma nova instância toda vez que a instância é necessária
+            // AddScoped<T>() => Garante que haja apenas uma instância sendo utilizada em todo o contexto
+            // AddSingleton<T>() => Cria uma instância por aplicação
 
         }
 
