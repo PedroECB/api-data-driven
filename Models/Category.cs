@@ -23,6 +23,8 @@ namespace ApiDataDriven.Models
         [MinLength(3, ErrorMessage = "Esse campo deve conter no mínimo 3 caracteres.")]
 
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório")]
         public string Description { get; set; }
 
         [Required(ErrorMessage = "O código da categoria é obrigatório.")]

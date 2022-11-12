@@ -35,3 +35,9 @@
 
 .vs/
 .vscode/
+
+### DotnetCore ###
+# .NET Core build folders
+
+bin/
+obj/
