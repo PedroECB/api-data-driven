@@ -11,5 +11,7 @@ namespace ApiDataDriven.Data
         }
 
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Product { get; set; }
+
     }
 }

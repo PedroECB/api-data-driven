@@ -1,12 +1,11 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using ApiDataDriven.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ApiDataDriven.Data;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using ApiDataDriven.Models;
+using ApiDataDriven.Data;
 
 namespace ApiDataDriven.Controllers
 {
@@ -25,7 +24,7 @@ namespace ApiDataDriven.Controllers
 
             try
             {
-                categories = context.Categories.ToList();
+                categories = await context.Categories.AsNoTracking().ToListAsync();
             }
             catch (Exception ex)
             {
@@ -50,7 +49,7 @@ namespace ApiDataDriven.Controllers
         {
             Category category;
 
-            category = await context.Categories.Where(c => c.Id == id).FirstOrDefaultAsync();
+            category = await context.Categories.Where(c => c.Id == id).AsNoTracking().FirstOrDefaultAsync();
 
             if (category == null)
                 return NotFound(new { Message = "Categoria não encontrada!" });
@@ -63,7 +62,6 @@ namespace ApiDataDriven.Controllers
         [Route("create")]
         public async Task<ActionResult<object>> Create([FromBody] Category category, [FromServices] DataContext context)
         {
-
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
@@ -77,7 +75,7 @@ namespace ApiDataDriven.Controllers
                 return BadRequest(new { Message = "Não foi possível criar a categoria", ErrorExcepition = ex.Message });
             }
 
-            object objReturn = new { Message = "Categoria cadastrado com sucesso!", Category = category };
+            object objReturn = new { Message = "Categoria cadastrada com sucesso!", Category = category };
             return new JsonResult(objReturn);
         }
 
@@ -124,8 +122,8 @@ namespace ApiDataDriven.Controllers
             {
                 return BadRequest(new { Message = "Falha ao deletar a categoria!", ErrorMessage = ex.Message });
             }
-
         }
+
 
     }
 }
