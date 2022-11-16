@@ -5,9 +5,13 @@ namespace ApiDataDriven.Data
 {
     public class DataContext : DbContext
     {
-        //Microsoft.EntityFrameworkCore.InMemory --version 3.0.0
-        //Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.0
-        //dotnet add package EFCore.NamingConventions --version 1.1.0
+        // Microsoft.EntityFrameworkCore.InMemory --version 3.0.0
+        // Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.0
+        // dotnet add package EFCore.NamingConventions --version 1.1.0
+        // dotnet tool install --global dotnet-ef  => dotnet add packacge Microsoft.EntityFrameworkCore.Design
+        // dotnet ef database update (Criar a migração inicial de banco)
+        // dotnet add package Microsoft.AspNetCore.Authentication
+        // dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -21,6 +25,8 @@ namespace ApiDataDriven.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Product { get; set; }
+        public DbSet<User> User { get; set; }
+
 
     }
 }
