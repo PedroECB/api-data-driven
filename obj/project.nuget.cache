@@ -1,15 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "JLb67PxfDUUPL280T3C8kdUZLXM05FZA7SBzh6iNV/VO1iNgSuqQv9ZOisWYltDxjKraYXkgs7GLoPnxpbov4g==",
+  "dgSpecHash": "AO7WX0q59Dg7FhTYSy/bsz98+RrIlh555JaKW/KP5PT/y3luyv7M63aIn3eX/VSJ35GL+Mz4XLpFRe2fxNzoxw==",
   "success": true,
   "projectFilePath": "C:\\dev\\exemplos\\api-data-driven\\api-data-driven.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pedro\\.nuget\\packages\\efcore.namingconventions\\1.1.0\\efcore.namingconventions.1.1.0.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.31\\microsoft.entityframeworkcore.3.1.31.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.31\\microsoft.entityframeworkcore.abstractions.3.1.31.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.31\\microsoft.entityframeworkcore.analyzers.3.1.31.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\3.1.31\\microsoft.entityframeworkcore.inmemory.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.11\\microsoft.entityframeworkcore.relational.3.1.11.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.31\\microsoft.extensions.caching.abstractions.3.1.31.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.31\\microsoft.extensions.caching.memory.3.1.31.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.31\\microsoft.extensions.configuration.3.1.31.nupkg.sha512",
@@ -21,9 +23,12 @@
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.31\\microsoft.extensions.logging.abstractions.3.1.31.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.options\\3.1.31\\microsoft.extensions.options.3.1.31.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.31\\microsoft.extensions.primitives.3.1.31.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\npgsql\\4.1.8\\npgsql.4.1.8.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\3.1.11\\npgsql.entityframeworkcore.postgresql.3.1.11.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
-    "C:\\Users\\pedro\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+    "C:\\Users\\pedro\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -27,7 +27,6 @@ namespace ApiDataDriven.Models
         [Required(ErrorMessage = "Campo obrigatório")]
         public string Description { get; set; }
 
-        [Required(ErrorMessage = "O código da categoria é obrigatório.")]
         public string Code { get; set; }
     }
 }

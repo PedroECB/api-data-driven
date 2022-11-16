@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using ApiDataDriven.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+// using EFCore.NamingConventions;
 
 namespace ApiDataDriven
 {
@@ -23,13 +24,13 @@ namespace ApiDataDriven
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
-            services.AddScoped<DataContext, DataContext>();
+            services.AddDbContext<DataContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("connectionString")));
+            // services.AddScoped<DataContext, DataContext>();
 
             // O tratamento de dependências pode ser feito de 3 maneiras no .NET
             // AddTransient<T>() => Gera uma nova instância toda vez que a instância é necessária
             // AddScoped<T>() => Garante que haja apenas uma instância sendo utilizada em todo o contexto
-            // AddSingleton<T>() => Cria uma instância por aplicação
+            // AddSingleton<T>() => Cria uma instância por aplicação.
 
         }
 

@@ -3,7 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApiDataDriven.Models
 {
-    class User
+    [Table("users")]
+    public class User
     {
         [Key]
         public int Id { get; set; }

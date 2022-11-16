@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApiDataDriven.Models
 {
+    [Table("product")]
     public class Product
     {
         [Key]
@@ -15,6 +16,7 @@ namespace ApiDataDriven.Models
         [ForeignKey("Category")]
         public int IdCategory { get; set; }
         public Category Category { get; set; }
+        public decimal Price { get; set; }
     }
 
 }
