@@ -6,6 +6,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using ApiDataDriven.Models;
 using ApiDataDriven.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ApiDataDriven.Controllers
 {
@@ -18,6 +19,7 @@ namespace ApiDataDriven.Controllers
     {
         [HttpGet]
         [Route("")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Category>>> List([FromServices] DataContext context)
         {
             List<Category> categories = new List<Category>();
@@ -45,6 +47,7 @@ namespace ApiDataDriven.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Category>> GetById(int id, [FromServices] DataContext context)
         {
             Category category;
@@ -60,6 +63,7 @@ namespace ApiDataDriven.Controllers
 
         [HttpPost]
         [Route("create")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<object>> Create([FromBody] Category category, [FromServices] DataContext context)
         {
             if (!ModelState.IsValid)
@@ -82,6 +86,7 @@ namespace ApiDataDriven.Controllers
 
         [HttpPut]
         [Route("{id:int}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<Category>> Put(int id, [FromBody] Category category, [FromServices] DataContext context)
         {
             if (id != category.Id)
@@ -105,6 +110,7 @@ namespace ApiDataDriven.Controllers
 
         [HttpDelete]
         [Route("{id:int}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<object>> Delete(int id, [FromServices] DataContext context)
         {
             Category category = context.Categories.Where(c => c.Id == id).FirstOrDefault();

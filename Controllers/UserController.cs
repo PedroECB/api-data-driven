@@ -6,9 +6,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using ApiDataDriven.Models;
 using ApiDataDriven.Data;
-using ApiDataDriven.Services;
 using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
 
 namespace ApiDataDriven.Controllers
 {
@@ -17,8 +15,26 @@ namespace ApiDataDriven.Controllers
 
     public class UserController : ControllerBase
     {
+        [HttpGet]
+        [Route("")]
+        [Authorize(Roles = "ADMIN")]
+        public async Task<ActionResult<List<User>>> Get([FromServices] DataContext context)
+        {
+            try
+            {
+                List<User> listaUsuarios = await context.User.AsNoTracking().ToListAsync();
+                return Ok(listaUsuarios);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { Message = "Falha ao listar usuários", ErrorMessage = ex.Message });
+            }
+        }
+
+
         [HttpPost]
         [Route("")]
+        [AllowAnonymous]
         public async Task<ActionResult<User>> Post([FromBody] User userModel, [FromServices] DataContext context)
         {
             if (!ModelState.IsValid)
@@ -40,6 +56,7 @@ namespace ApiDataDriven.Controllers
 
         [HttpPost]
         [Route("autenticar")]
+        [AllowAnonymous]
         public async Task<ActionResult<object>> Autenticar([FromBody] User userModel, [FromServices] DataContext context)
         {
             var user = await context.User.Where(x => x.Name == userModel.Name && x.Email == userModel.Email).FirstOrDefaultAsync();
@@ -80,5 +97,10 @@ namespace ApiDataDriven.Controllers
         [Route("cliente")]
         [Authorize(Roles = "CLIENTE")]
         public string Cliente() => "Cliente";
+
+        [HttpGet]
+        [Route("clienteadmin")]
+        [Authorize(Roles = "CLIENTE, ADMIN")]
+        public string ClienteAdmin() => "Cliente e Admin";
     }
 }

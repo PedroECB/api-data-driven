@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using ApiDataDriven.Models;
 using ApiDataDriven.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ApiDataDriven.Controllers
 {
@@ -15,6 +16,7 @@ namespace ApiDataDriven.Controllers
     {
         [HttpGet]
         [Route("")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Product>>> Get([FromServices] DataContext context)
         {
             List<Product> products = new List<Product>();
@@ -36,6 +38,7 @@ namespace ApiDataDriven.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Product>> GetById(int id, [FromServices] DataContext context)
         {
             try
@@ -56,6 +59,7 @@ namespace ApiDataDriven.Controllers
 
         [HttpPost]
         [Route("create")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<Product>> Create([FromBody] Product product, [FromServices] DataContext context)
         {
             if (!ModelState.IsValid)
@@ -70,6 +74,7 @@ namespace ApiDataDriven.Controllers
 
         [HttpPatch]
         [Route("{id:int}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<Product>> Update(int id, [FromBody] Product product, [FromServices] DataContext context)
         {
             Product productUpdate = await context.Product.FirstOrDefaultAsync(x => x.Id == id);
@@ -89,6 +94,7 @@ namespace ApiDataDriven.Controllers
 
         [HttpDelete]
         [Route("{id:int}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<Product>> Delete(int id, [FromServices] DataContext context)
         {
             Product productUpdate = await context.Product.FirstOrDefaultAsync(x => x.Id == id);
@@ -101,9 +107,5 @@ namespace ApiDataDriven.Controllers
 
             return Ok(new { Message = "Produto deletado com sucesso!" });
         }
-
-
-
-
     }
 }

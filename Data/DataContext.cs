@@ -6,7 +6,7 @@ namespace ApiDataDriven.Data
     public class DataContext : DbContext
     {
         // Microsoft.EntityFrameworkCore.InMemory --version 3.0.0
-        // Npgsql.EntityFrameworkCore.PostgreSQL --version 7.0.0
+        // Npgsql.EntityFrameworkCore.PostgreSQL --version 3.1.11
         // dotnet add package EFCore.NamingConventions --version 1.1.0
         // dotnet tool install --global dotnet-ef  => dotnet add packacge Microsoft.EntityFrameworkCore.Design
         // dotnet ef database update (Criar a migração inicial de banco)
