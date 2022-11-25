@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace ApiDataDriven.Controllers
 {
     [ApiController]
-    [Route("categories")]
+    [Route("v1/categories")]
 
     //https://localhost:5001/livro
 
@@ -20,6 +20,8 @@ namespace ApiDataDriven.Controllers
         [HttpGet]
         [Route("")]
         [AllowAnonymous]
+        [ResponseCache(VaryByHeader = "User-Agent", Location = ResponseCacheLocation.Any, Duration = 10)]
+        //opção de não cacheamento => [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<ActionResult<List<Category>>> List([FromServices] DataContext context)
         {
             List<Category> categories = new List<Category>();
