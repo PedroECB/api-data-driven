@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace ApiDataDriven.Controllers
 {
     [ApiController]
-    [Route("v1/categories")]
+    [Route("categories")]
 
     //https://localhost:5001/livro
 
@@ -111,7 +111,7 @@ namespace ApiDataDriven.Controllers
 
 
         [HttpDelete]
-        [Route("{id:int}")]
+        [Route("delete/{id:int}")]
         [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<object>> Delete(int id, [FromServices] DataContext context)
         {

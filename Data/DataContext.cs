@@ -12,6 +12,7 @@ namespace ApiDataDriven.Data
         // dotnet ef database update (Criar a migração inicial de banco)
         // dotnet add package Microsoft.AspNetCore.Authentication
         // dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+        // dotnet add package Swashbuckle.AspNetCore -v 5.0.0-rc4
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {

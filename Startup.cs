@@ -13,6 +13,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.AspNetCore.ResponseCompression;
 using System.Linq;
+using Microsoft.OpenApi.Models;
 
 // using EFCore.NamingConventions;
 
@@ -30,6 +31,7 @@ namespace ApiDataDriven
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddResponseCompression(options =>
             {
                 options.Providers.Add<GzipCompressionProvider>();
@@ -69,6 +71,12 @@ namespace ApiDataDriven
             // AddScoped<T>() => Garante que haja apenas uma instância sendo utilizada em todo o contexto
             // AddSingleton<T>() => Cria uma instância por aplicação.
 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiDataDriven", Version = "v1" });
+                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,7 +91,20 @@ namespace ApiDataDriven
 
             app.UseHttpsRedirection();
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "APIDataDrivenV1");
+            });
+
             app.UseRouting();
+
+            app.UseCors(x =>
+            {
+                x.AllowAnyOrigin();
+                x.AllowAnyMethod();
+                x.AllowAnyHeader();
+            });
 
             app.UseAuthentication();
             app.UseAuthorization();

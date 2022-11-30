@@ -42,8 +42,10 @@ namespace ApiDataDriven.Controllers
 
             try
             {
+                userModel.Role = "CLIENTE";
                 context.User.Add(userModel);
                 await context.SaveChangesAsync();
+
             }
             catch (Exception ex)
             {
@@ -82,7 +84,7 @@ namespace ApiDataDriven.Controllers
         [HttpGet]
         [Route("autenticado")]
         [Authorize]
-        public object Autenticado()
+        private object Autenticado()
         {
             var teste = HttpContext.User.Identity.Name;
             return new JsonResult(new { Id = int.Parse(teste) });
@@ -91,16 +93,17 @@ namespace ApiDataDriven.Controllers
         [HttpGet]
         [Route("gerente")]
         [Authorize(Roles = "ADMIN")]
-        public string Admin() => "Admin";
+        private string Admin() => "Admin";
 
         [HttpGet]
         [Route("cliente")]
         [Authorize(Roles = "CLIENTE")]
-        public string Cliente() => "Cliente";
+        private string Cliente() => "Cliente";
 
         [HttpGet]
         [Route("clienteadmin")]
         [Authorize(Roles = "CLIENTE, ADMIN")]
-        public string ClienteAdmin() => "Cliente e Admin";
+        private string ClienteAdmin() => "Cliente e Admin";
+
     }
 }
